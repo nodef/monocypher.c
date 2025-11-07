@@ -18,7 +18,8 @@ the notes at the end.)_
 ---
 
 Monocypher is an easy to use, easy to deploy, auditable crypto library
-written in portable C.  It approaches the size of [TweetNaCl][] and the
+written in portable C, by [Loup Vaillant](https://github.com/LoupVaillant).
+It approaches the size of [TweetNaCl][] and the
 speed of [libsodium][].
 
 [Official site.](https://monocypher.org/)  
@@ -60,15 +61,31 @@ The manual can be found at https://monocypher.org/manual/, and in the
 Installation
 ------------
 
-### Option 1: grab the sources
+### Option 1: grab it with npm
 
-The easiest way to use Monocypher is to include `src/monocypher.h` and
-`src/monocypher.c` directly into your project.  They compile as C (since
-C99) and C++ (since C++98).
+The easiest way to use Monocypher is to include it with npm.
 
-If you need the optional SHA-512 or Ed25519, grab
-`src/optional/monocypher-ed25519.h` and
-`src/optional/monocypher-ed25519.c` as well.
+Run:
+```bash
+$ npm i monocypher.c
+```
+
+And then include `monocypher.h` as follows:
+```c
+#include "node_modules/monocypher.c/src/monocypher.h"
+#include "node_modules/monocypher.c/src/optional/monocypher-ed25519.h" // if you need SHA-512 or Ed25519
+```
+
+You may also want to include `monocypher.c` as follows:
+```c
+#ifndef __MONOCYPHER_C__
+#define __MONOCYPHER_C__
+#include "node_modules/monocypher.c/src/monocypher.c"
+#include "node_modules/monocypher.c/src/optional/monocypher-ed25519.c" // if you need SHA-512 or Ed25519
+#endif
+```
+
+This will include both the function declaration and their definitions into a single file.
 
 ### Option 2: grab the library
 
@@ -194,3 +211,10 @@ couple files that ship with the tarball releases:
 To generate a tarball, simply type `make dist`. It will make a tarball
 with a name that matches the current version (using `git describe`), in
 the current directory.
+
+<br>
+<br>
+
+
+[![ORG](https://img.shields.io/badge/org-nodef-green?logo=Org)](https://nodef.github.io)
+![](https://ga-beacon.deno.dev/G-RC63DPBH3P:SH3Eq-NoQ9mwgYeHWxu7cw/github.com/nodef/monocypher.c)

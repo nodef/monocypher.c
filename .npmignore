@@ -1,0 +1,8 @@
+.github/
+doc/
+tests/
+.editorconfig
+change-prefix.sh
+dist_ignore
+dist.sh
+tis.config

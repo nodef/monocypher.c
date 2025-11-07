@@ -1,0 +1,15 @@
+{
+  "name": "monocypher.c",
+  "version": "4.0.2",
+  "description": "An easy to use, easy to deploy crypto library; Loup Vaillant (2016).",
+  "keywords": ["c", "library", "crypto", "encryption", "decryption", "authentication", "signature", "hash", "monocypher"],
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodef/monocypher.c.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nodef/monocypher.c/issues"
+  },
+  "homepage": "https://github.com/nodef/monocypher.c#readme"
+}
